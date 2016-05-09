@@ -1,0 +1,72 @@
+CREATE DATABASE College;
+
+CREATE TABLE STUDENT
+       (CWID numeric(9) PRIMARY KEY,
+	D_Num int,
+	CONSTRAINT Major_DNum FOREIGN KEY (D_Num) REFERENCES DEPARTMENT(D_Num),
+       Name char(30),
+       Address char(50),
+       Phone_Number char(11));
+       
+CREATE TABLE DEPARTMENT
+	(D_Num int PRIMARY KEY,
+	SSN numeric(9),
+	CONSTRAINT Chair_SSN FOREIGN KEY (SSN) REFERENCES PROFESSOR(SSN),
+	Name char(15),
+	Location char(20),
+	Phone_Number char(11));
+
+CREATE TABLE COURSE
+	(C_Num int PRIMARY KEY,
+	D_Num int,
+	CONSTRAINT C_DNum FOREIGN KEY (D_Num) REFERENCES DEPARTMENT(D_Num),
+	Title char(15),
+	Textbook char(20),
+	Units int);
+
+CREATE TABLE PROFESSOR
+	(SSN numeric(9) PRIMARY KEY,
+	Name char(20),
+	A_Street char(20),
+	A_City char(20),
+	A_State char(2),
+	A_Zip numeric(5),
+	T_Area numeric(3),
+	T_num numeric(7),
+	Sex char,
+	Title char(15),
+	Salary int);
+
+CREATE TABLE SECTION
+	(S_Num int PRIMARY KEY,
+	C_Num int,
+	SSN numeric(9),
+	CONSTRAINT S_CNum FOREIGN KEY (C_Num) REFERENCES COURSE(C_Num),
+	CONSTRAINT S_SSN FOREIGN KEY (SSN) REFERENCES PROFESSOR(SSN),
+	ClassRoom char(6),
+	StartTime time,
+	EndTime time,
+	SeatNo int);
+
+CREATE TABLE ENROLLMENT
+	(CWID numeric(9),
+	S_Num int,
+	CONSTRAINT S_CWID FOREIGN KEY (CWID) REFERENCES STUDENT(CWID),
+	CONSTRAINT Sec_SNum FOREIGN KEY (S_Num) REFERENCES SECTION(S_Num),
+	Grade char(2));
+
+CREATE TABLE MINOR
+	(CWID numeric(9),
+	D_Num int,
+	CONSTRAINT S_CWID FOREIGN KEY (CWID) REFERENCES STUDENT(CWID),
+	CONSTRAINT  D_DNum FOREIGN KEY (D_Num) REFERENCES DEPARTMENT(D_Num));
+
+CREATE TABLE PREREQUISITES
+	(C_Num int,
+	CONSTRAINT C_CNum FOREIGN KEY (C_Num) REFERENCES COURSE(C_Num),
+	CONSTRAINT P_CNum FOREIGN KEY (C_Num) REFERENCES COURSE(C_Num));
+
+CREATE TABLE COLLEGE_DEGREE
+	(SSN numeric(9),
+	CONSTRAINT Prof_SSN FOREIGN KEY (SSN) REFERENCES PROFESSOR(SSN),
+	Degree char(50));

@@ -1,0 +1,41 @@
+CREATE DATABASE College;
+
+CREATE TABLE STUDENT
+       (CWID int PRIMARY KEY,
+       Name char(30),
+       Address char(50),
+       Phone_Number char(11));
+       
+CREATE TABLE DEPARTMENT
+	(D_Num int PRIMARY KEY,
+	Name char(15),
+	Location char(20),
+	Phone_Number char(11));
+
+CREATE TABLE COURSE
+	(C_Num int PRIMARY KEY,
+	Title char(15),
+	Textbook char(20),
+	Units int);
+
+CREATE TABLE PROFESSOR
+	(SSN numeric(9) PRIMARY KEY,
+	Name char(20),
+	A_Street char(20),
+	A_City char(20),
+	A_State char(2),
+	A_Zip numeric(5),
+	T_Area numeric(3),
+	T_num numeric(7),
+	Sex char,
+	Title char(15),
+	Salary int);
+
+CREATE TABLE SECTION
+	(S_Num int PRIMARY KEY,
+	Classroom char(6),
+	StartTime time,
+	EndTime time,
+	SeatNum int);
+
+
