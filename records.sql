@@ -19,7 +19,7 @@ INSERT INTO PROFESSOR
 INSERT INTO DEPARTMENT
 	VALUES
 	(1, 111111111, 'Mathematics', 'Math Building', '11111111111'),
-	(2, 987654321, 'Computer Science', 'CS Building', '22222222222'),
+	(2, 987654321, 'Computer Science', 'CS Building', '22222222222');
 
 INSERT INTO COURSE
 	VALUES
