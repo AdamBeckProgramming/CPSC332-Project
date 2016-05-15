@@ -1,5 +1,10 @@
 INSERT INTO STUDENT
 	VALUES	
+	(000000001, 1, 'Jesibelle Jenkins', '123 main street', 11111111111),
+	(000000002, 1, 'Tom Jones', '321 main street', 11111111112),
+	(000000003, 2, 'Kim Jong Un', 'REDACTED', 11111111113),
+	(000000004, 2, 'Joseph Stalin', '123 Gulag Street', 11111111114),
+	(000000005, 2, 'Adolf Hitler', '123 Reichstag Street', 11111111115);
 	(000000006, 1, 'Matt Bryan', '987 main way', 11111111116),
 	(000000007, 1, 'Jimmy Jam', '321 main way', 11111111117),
 	(000000008, 2, 'Andre Samuel', '4657 Somewhere road', 11111111118),
