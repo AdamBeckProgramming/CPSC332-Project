@@ -20,14 +20,14 @@ INSERT INTO DEPARTMENT
 	VALUES
 	(1, 111111111, 'Mathematics', 'Math Building', '11111111111'),
 	(2, 987654321, 'Computer Science', 'CS Building', '22222222222'),
-	(1, 1, 'Abstract Algebra', 'Basic Algebra Book', 4);
+	(1, 1, 111111111, 'MA 102', '08:00:00', '09:50:00', 30);
 
 INSERT INTO COURSE
 	VALUES
 	(2, 1, 'Calculus', 'Calculus book', 4),
 	(3, 2, 'Databases', 'Database book', 4),
 	(4, 2, 'Data Structures', 'Data Structure book', 3),
-	(1, 1, 111111111, 'MA 102', '08:00:00', '09:50:00', 30);
+	(1, 1, 'Algebra', 'Basic Algebra Book', 4);
 
 INSERT INTO SECTION
 	VALUES
