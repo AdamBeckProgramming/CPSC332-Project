@@ -14,7 +14,7 @@ mysql_select_db('cs332s6') or die('Could not select database');
 
 $query = "SELECT ClassRoom, Day, StartTime, COUNT(E.CWID) Enrolled 
 	  FROM COURSE C, SECTION S, MEETING_DAY MD, ENROLLMENT E 
-	  WHERE C.C_Num = 2 AND S.C_Num = C.C_Num AND MD.S_Num = S.S_Num 
+	  WHERE C.C_Num = '$CoNum' AND S.C_Num = C.C_Num AND MD.S_Num = S.S_Num 
 	  AND E.S_Num = S.S_Num 
 	  GROUP BY S.S_Num";
 
